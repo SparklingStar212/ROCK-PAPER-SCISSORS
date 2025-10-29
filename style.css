@@ -1,0 +1,209 @@
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(magenta, red);
+  overflow: hidden;
+}
+#pickedPaper, #pickedRock, #pickedScissors{
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: 1px solid chocolate;
+  border-radius: 5px;
+}
+#pickedPaper:hover#pickedPaper:hover, #pickedRock:hover, #pickedScissors:hover{
+  background-color: rgb(187, 115, 64);
+  transition: background-color 0.3s ease;
+}
+.btns{
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: transform 0.1s;
+}
+.btns:active {
+  transform: scale(0.95);
+}
+#playerChoice{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+#computerMove, #playerMove{
+  width: 100px;
+}
+.gameArena{
+  display: flex;
+  align-items: center;
+  justify-content: space-between
+}
+#gameDetails{
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between
+}
+#motherContainer{
+  text-align: center;
+  /* border: 1px solid black; */
+  padding: 1em 2.5em;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+.disabled{
+  opacity: 0.65;
+  pointer-events: none;
+}
+#computerScore, #playerScore {
+  font-family: Helvetica;
+  font-weight: bold;
+  font-size: 70px;
+  margin: 0;
+}
+.header{
+  font-size: 50px;
+  color: blueviolet;
+  margin-bottom: 0;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+.subheader{
+  font-size: 18px;
+  font-weight: bold;
+}
+.shapes{
+  position: absolute;
+  z-index: -1;
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  background-color: rgba(250, 235, 215, 0.384);
+}
+.squares{
+  border-radius: 20px;
+}
+.s-1{
+  left: 20px;
+  top: -100px;
+  animation: fall 10s linear infinite 3.5s;
+}
+.s-2{
+  left: 220px;
+  top: -100px;
+  animation: fall 10s linear infinite 0.5s;
+}
+.s-3{
+  left: 420px;
+  top: -100px;
+  animation: fall 10s linear infinite 2.5s;
+}
+.s-4{
+  left: 620px;
+  top: -100px;
+  animation: fall 10s linear infinite 2s;
+}
+
+.c-2{
+  right: 420px;
+  top: -100px;
+  animation: fall 10s linear infinite 2.5s;
+}
+.c-3{
+  right: 220px;
+  top: -100px;
+  animation: fall 10s linear infinite 0.5s;
+}
+.c-4{
+  right: 20px;
+  top: -100px;
+  animation: fall 10s linear infinite;
+}
+@keyframes fall {
+  to{
+    transform: translateY(120vh) rotate(360deg);
+  }
+}
+#restart{
+  background-color: blueviolet;
+  font-size: 15px;
+  border: 0;
+  color: white;
+  font-weight: bold;
+  padding: 8px 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.15s;
+}
+#restart:hover{
+  background-color: rgb(92, 0, 179);
+}
+#currentRound{
+  font-weight: bold;
+  font-size: 16px;
+  font-family: Arial;
+  color: rgb(73, 0, 73);
+}
+#result{
+  font-size: 20px;
+  font-weight: bold;
+  color: chocolate;
+}
+.move{
+  font-weight: bold;
+  color: rgb(73, 0, 73);
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .gameArena {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  #gameDetails {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #motherContainer {
+    width: 80%;
+    padding: 1.5em;
+  }
+}
+@media (max-width: 480px) {
+  body {
+    padding: 1em;
+  }
+
+  .header {
+    font-size: 28px;
+  }
+
+  .subheader {
+    font-size: 14px;
+  }
+
+  #playerChoice {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  #pickedPaper, #pickedRock, #pickedScissors {
+    width: 60px;
+    height: 60px;
+  }
+
+  #computerMove, #playerMove {
+    width: 80px;
+  }
+
+  #gameDetails {
+    font-size: 14px;
+  }
+}
+@media (max-width: 600px) {
+  .shapes { display: none; }
+}
