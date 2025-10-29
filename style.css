@@ -33,18 +33,21 @@ body {
   gap: 10px;
 }
 #computerMove, #playerMove{
-  width: 100px;
+  width: 80px;
 }
 .gameArena{
   display: flex;
   align-items: center;
-  justify-content: space-between
+  /* justify-content: space-between */
 }
 #gameDetails{
   display: flex;
   align-items: center;
   text-align: center;
-  justify-content: space-between
+  justify-content: space-between;
+}
+#playerSection{
+  margin-right: 25px;
 }
 #motherContainer{
   text-align: center;
@@ -61,17 +64,17 @@ body {
 #computerScore, #playerScore {
   font-family: Helvetica;
   font-weight: bold;
-  font-size: 70px;
+  font-size: clamp(50px, 6.5vw, 70px);
   margin: 0;
 }
 .header{
-  font-size: 50px;
+  font-size: clamp(16px, 3vw 50px);
   color: blueviolet;
   margin-bottom: 0;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
 }
 .subheader{
-  font-size: 18px;
+  font-size: clamp(16px, 1.6vw, 18px);
   font-weight: bold;
 }
 .shapes{
@@ -147,7 +150,7 @@ body {
   color: rgb(73, 0, 73);
 }
 #result{
-  font-size: 20px;
+  font-size: clamp(16px, 1.8vw, 20px);
   font-weight: bold;
   color: chocolate;
 }
@@ -157,7 +160,26 @@ body {
   text-align: center;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 480px) {
+  body{
+    /* height: 100vh; */
+  }
+  #playerChoice{
+    gap: 2px;
+  }
+  #pickedPaper, #pickedRock, #pickedScissors{
+    width: 58px;
+    height: 58px;
+  }
+  #motherContainer{
+    padding: 0.5em 1em;
+  }
+  .shapes{
+    display: none;
+  }
+}
+
+/* @media (max-width: 768px) {
   body{
     padding: 2em;
     height: 100%;
@@ -213,4 +235,4 @@ body {
 }
 @media (max-width: 600px) {
   .shapes { display: none; }
-}
+} */

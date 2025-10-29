@@ -54,7 +54,7 @@
       pickedPaper.classList.add('disabled')
       pickedScissors.classList.add('disabled')
       if (computerScore.textContent > playerScore.textContent) {
-        result.textContent = "Game Over - Computer Won, You Lose!"
+        result.textContent = "Game Over - Computer Won!"
       } else if (computerScore.textContent == playerScore.textContent) {
         result.textContent = "Game Over - It's A Draw!"
       } else if (computerScore.textContent < playerScore.textContent) {
